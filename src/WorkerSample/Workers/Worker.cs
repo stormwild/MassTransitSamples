@@ -27,6 +27,8 @@ namespace WorkerSample.Workers
 
                 await _bus.Publish(new Hello { Name = "World" }, stoppingToken);
 
+                _logger.LogInformation("XXXXXXXXXXXXXXXXXXXXXX: {Time}", DateTimeOffset.Now);
+
                 await Task.Delay(1000, stoppingToken);
             }
         }
